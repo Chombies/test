@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zakat Page</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script>
+            function calc(btn){
+                var income = parseFloat(document.getElementById('incomeBox').value);
+                var result = 0;
+                //calculation
+                result = income+(income*0.025);
+                document.getElementById("result").innerHTML = "<b>RM </b>" + result.toFixed(2);
+            }
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h1>Zakat Checker</h1>
+        <hr>
+        <p>
+            <b>RM </b>
+            <input type="text" id="incomeBox" placeholder="Yearly income" style="width: 150px">
+            <br><br>
+            <input type="button" id="calculate" value="calculate" onclick="calc(this)" style="width: 130px;">
+            <br><br>
+            <b>RESULT: <output type="number" id="result"></output></b>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Calculator Page</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script>
+            function calc(btn){
+                var No1 = parseInt(document.getElementById("1").value);
+                var No2 = parseInt(document.getElementById("2").value);
+                var total = 0;
+                var operator = "";
+                if(btn.value == "+"){
+                    operator = " + ";
+                    total = No1 + No2;
+                }
+                else if(btn.value == "-"){
+                    operator = " - ";
+                    total = No1 - No2;
+                }else if(btn.value == "*"){
+                    operator = " * ";
+                    total = No1 * No2;
+                }else {
+                    operator = " / ";
+                    total = No1 / No2;
+                }
+
+                //alert(total);
+                let resultStr = No1 + operator + No2 + " = " + total;
+                let resultStr2 = No1 + operator + No2 + " <br>= " + total;
+                document.getElementById("result").innerHTML = resultStr;
+                
+            }
+            function clearButton(btn){
+                document.getElementById('1').value = '';
+                document.getElementById('2').value = '';
+                document.getElementById('result').value = '';
+            }
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h1>Calculator</h1><hr>
+        <div>
+            <input type="number" id="1" placeholder="Enter first number">
+            <br>
+            <input type="number" id="2" placeholder="Enter second number">
+            <br>
+        </div>
+        <p>
+            <input type="submit" value="+" id="calculateButton" onclick="calc(this)" style="width: 27px">
+            <input type="submit" value="-" id="calculateButton" onclick="calc(this)" style="width: 27px">
+            <input type="submit" value="*" id="calculateButton" onclick="calc(this)" style="width: 27px">
+            <input type="submit" value="/" id="calculateButton" onclick="calc(this)" style="width: 27px">
+            <input type="submit" id="clearButton" value="Clear" onClick="clearButton(this)">
+        </p>
+        <p>
+            <b>RESULT:</b> <output type="number" id="result"></output>
+        </p>
+    </body>
+</html>

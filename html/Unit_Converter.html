@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unit Converter</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script>
+            function calc(btn){
+                var unitConv = document.getElementById("unitConv").value;
+                var num = parseFloat(document.getElementById("numBox").value);
+                var str = "";
+                if(unitConv == "cmToM"){
+                    alert("cmToM");
+                    num = num/100;
+                    str = num.toFixed(2) + " <b>CM</b>";
+                }else if(unitConv == "mToCm"){
+                    alert("mToCm");
+                    num = num*100;
+                    str = num.toFixed(2) + " <b>M</b>";
+                }else if(unitConv == "kmToM"){
+                    alert("kmToM");
+                    num = num*1000;
+                    str = num.toFixed(2) + " <b>M</b>";
+                }else if(unitConv == "mToKm"){
+                    alert("mToKm");
+                    num = num/1000;
+                    str = num.toFixed(2) + " <b>KM</b>";
+                }else if(unitConv == "CtoF"){
+                    alert("CtoF");
+                    num = num+32;
+                    str = num.toFixed(2) + " <b>°F</b>";
+                }
+
+                document.getElementById("result").innerHTML = str;
+            }
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <div class="header">
+            <h1>Unit Converter</h1>
+        </div>
+            <hr>
+        <div class="input">
+            <div class="w3-padding">
+                <input type="number" id="numBox" placeholder="Enter a number" style="width: 170px; ">
+                <br>
+                <select name="unit" id="unitConv" style="width: 170px;">
+                    <option value="cmToM">CM to M</option>
+                    <option value="mToCm">M to CM</option>
+                    <option value="mToKm">M to KM</option>
+                    <option value="kmToM">KM to M</option>
+                    <option value="CtoF">°C to °F</option>
+                </select>
+            </div>
+            <div class="submit w3-padding">
+                <input type="submit" id="submitBox" value="Calculate" onclick="calc(this)" style="width: 170px;">
+            </div>
+            <div class="output">
+                <b>RESULT: <output id="result"></output></b>
+            </div>
+        </div>
+    </body>
+</html>

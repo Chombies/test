@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tools Page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            font-family: Arial, sans-serif; /* Use a common sans-serif font */
+        }
+
+        h1 {
+            color: #fff; /* White header text */
+        }
+
+        hr {
+            border: 1px solid #fff; /* White horizontal rule */
+        }
+
+        .button-container {
+            background-color: black; /* Black container background */
+            padding: 10px; /* Adjust padding as needed */
+            border-radius: 5px; /* Add border-radius for rounded corners */
+            display: inline-block; /* Ensures the container only takes the width of its contents */
+        }
+
+        input[type="submit"] {
+            text-align: center;
+            color: black; /* Black button text */
+            background-color: white; /* White button background */
+            border: 2px solid black; /* Black border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Adjust padding as needed */
+            margin-right: 10px; /* Add margin between buttons */
+        }
+
+        input[type="submit"]:hover {
+            background-color: black; /* Black button background on hover */
+            color: #fff; /* White button text on hover */
+        }
+
+        iframe {
+            background-color: #fff; /* White iframe background */
+            border: 2px solid #000; /* Black border around iframe */
+            border-radius: 5px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <h1>Tools</h1>
+    <hr>
+    <br>
+    <div class="button-container">
+        <a href="../html/Calculator.html" target="iframe_a"><input type="submit" id="calcButton" value="Calculator"></a>
+        <a href="../html/BMI.html" target="iframe_a"><input type="submit" id="BMIButton" value="BMI"></a>
+        <a href="../html/Zakat.html" target="iframe_a"><input type="submit" id="zakatButton" value="Zakat"></a>
+        <a href="../html/Unit_Converter.html" target="iframe_a"><input type="submit" id="convButton" value="Unit Converter"></a>    
+    </div>
+    <br><br>
+    <iframe src="../html/Calculator.html" name="iframe_a" height="300px" width="500px" title="Iframe Example"></iframe>
+    <br><br>
+    
+    <a href="../html/index.html">
+        <input type="submit" id="menuButton" value="Menu">
+    </a>
+</body>
+</html>

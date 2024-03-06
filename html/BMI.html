@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>BMI Page</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script>
+            function calc(btn){
+                var weight = document.getElementById("weightBox").value;
+                var height = (document.getElementById("heightBox").value)/100;
+                var bmi = 0;
+                var status = "";
+                // bmi
+                bmi = weight/Math.pow(height,2);
+                // status
+                if(bmi <= 18.5){
+                    status = "Underweight";
+                }else if(bmi <=25){
+                    status = "Normal";
+                }else if(bmi <=30){
+                    status = "Overweight";
+                }else{
+                    status = "Obese"
+                }
+                //output
+                document.getElementById('result').innerHTML = bmi.toFixed(1);
+                document.getElementById('status').innerHTML =  status;
+            }
+            function clearButton(btn){
+                document.getElementById("weightBox").value = '';
+                document.getElementById("heightBox").value =  '';
+                document.getElementById("result").value =  '';
+                document.getElementById("status").value =  '';
+            }
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h1>BMI Checker</h1>
+        <hr>
+        <div class="weightCont">
+            <input type="number" id="weightBox" placeholder="Enter Weight" style="width: 150px; height: 20px; margin-left: 20px;">
+                <b> KG</b>
+        </div>
+        <div class="heightCont">
+            <input type="number" id="heightBox" placeholder="Enter Height" style="width: 150px; height: 20px; margin-left: 20px;">
+            <b> CM</b>
+        </div>
+
+        <div class="buttonCont" style="padding: 10px;">
+            <input type="submit" id="calcBmiButton" value="Calculate" style=" width: 90px;" onclick="calc(this)">
+            <input type="submit" id="clearButton" value="clear" style=" width: 60px;" onclick="clearButton(this)">
+        </div>
+
+        <div class="clearCont" style="padding: 10px;"></div>
+
+        <div class="bmiCont">
+            <b>BMI: <output type="number" id="result"></output></b>
+        </div>
+
+        <div class="statsCont">
+            <b>STATUS: <output type="text" id="status"></output></b>
+        </div>
+    </body>
+</html>
